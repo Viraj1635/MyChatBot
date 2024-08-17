@@ -62,7 +62,7 @@ class _HomeState extends ConsumerState<Home> {
           toolbarHeight: 62,
           centerTitle: false,
           elevation: 10,
-          backgroundColor: Theme.of(context).colorScheme.surface,
+          backgroundColor: ref.read(themeProvider)==ThemeMode.light ? Colors.blue.shade100 : Colors.black,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -142,6 +142,7 @@ class _HomeState extends ConsumerState<Home> {
                     Expanded(
                       child: TextField(
                         controller: _controller,
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           hintText: 'Message!!',
                           hintStyle: TextStyle(color: Colors.grey[500]),
